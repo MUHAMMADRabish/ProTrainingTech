@@ -3,155 +3,122 @@ import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import './InterviewQuestions.css'
 
-/* ── Category data ──────────────────────────────────────── */
+/* ── Category data ─────────────────────────────────────────────────────
+   All img URLs are confirmed present on images.nareshit.com.
+   bg / color are used only if the image fails to load.
+   ─────────────────────────────────────────────────────────────────────── */
 const CATEGORIES = [
   {
     id: 'java',
     name: 'Java',
-    img: null,
-    emoji: '☕',
-    bg: '#fee2e2',
-    color: '#dc2626',
+    img: 'https://images.nareshit.com/Core_java_Naresh_ITECH.png',
+    bg: '#ef4444', color: '#fff',
   },
   {
     id: 'python',
     name: 'Python',
-    img: null,
-    emoji: '🐍',
-    bg: '#dcfce7',
-    color: '#16a34a',
+    img: 'https://images.nareshit.com/python-online-training-nareshit.jpg',
+    bg: '#3b82f6', color: '#fff',
   },
   {
     id: 'javascript',
     name: 'JavaScript',
-    img: null,
-    emoji: '🟨',
-    bg: '#fef9c3',
-    color: '#ca8a04',
+    img: 'https://images.nareshit.com/html-css-javascript-online-training-nareshit.jpg',
+    bg: '#eab308', color: '#fff',
   },
   {
     id: 'react',
     name: 'React',
-    img: null,
-    emoji: '⚛️',
-    bg: '#dbeafe',
-    color: '#1565c0',
+    img: 'https://images.nareshit.com/react-js-online-training-nareshit.jpg',
+    bg: '#06b6d4', color: '#fff',
   },
   {
     id: 'sql-databases',
     name: 'SQL & Databases',
-    img: null,
-    emoji: '🗄️',
-    bg: '#dbeafe',
-    color: '#0369a1',
+    img: 'https://images.nareshit.com/sql-server-online-training-nareshit.jpg',
+    bg: '#8b5cf6', color: '#fff',
   },
   {
     id: 'aws',
     name: 'AWS',
-    img: null,
-    emoji: '☁️',
-    bg: '#ffedd5',
-    color: '#ea580c',
+    img: 'https://images.nareshit.com/aws-online-training-nareshit.jpg',
+    bg: '#f97316', color: '#fff',
   },
   {
     id: 'devops',
     name: 'DevOps',
-    img: null,
-    emoji: '⚙️',
-    bg: '#f3e8ff',
-    color: '#7c3aed',
+    img: 'https://images.nareshit.com/devops-online-training-nareshit.jpg',
+    bg: '#22c55e', color: '#fff',
   },
   {
     id: 'data-structures',
     name: 'Data Structures',
-    img: null,
-    emoji: '🔗',
-    bg: '#dcfce7',
-    color: '#15803d',
+    img: 'https://images.nareshit.com/DSA_with_AI_Engineer_Program_Naresh_IT.png',
+    bg: '#14b8a6', color: '#fff',
   },
   {
     id: 'system-design',
     name: 'System Design',
-    img: null,
-    emoji: '🏗️',
-    bg: '#dbeafe',
-    color: '#1d4ed8',
+    img: 'https://images.nareshit.com/Site_Reliability_Engineering_(SRE)_online_training.jpg',
+    bg: '#6366f1', color: '#fff',
   },
   {
     id: 'mongodb',
     name: 'MongoDB',
-    img: null,
-    emoji: '🍃',
-    bg: '#dcfce7',
-    color: '#16a34a',
+    img: 'https://images.nareshit.com/mongo-db-online-training-nareshit.jpg',
+    bg: '#16a34a', color: '#fff',
   },
   {
     id: 'docker',
     name: 'Docker',
-    img: null,
-    emoji: '🐳',
-    bg: '#dbeafe',
-    color: '#0284c7',
+    img: 'https://images.nareshit.com/dockers-kubernetes-online-training-nareshit.jpg',
+    bg: '#2563eb', color: '#fff',
   },
   {
     id: 'git',
     name: 'Git',
-    img: null,
-    emoji: '🔀',
-    bg: '#ffedd5',
-    color: '#ea580c',
+    img: 'https://images.nareshit.com/azure-devops-online-training-nareshit.jpg',
+    bg: '#ea580c', color: '#fff',
   },
   {
     id: 'nasscom',
     name: 'NASSCOM',
     img: 'https://images.nareshit.com/images/image_1711014922224.jpg',
-    emoji: '🎓',
-    bg: '#fee2e2',
-    color: '#dc2626',
+    bg: '#dc2626', color: '#fff',
   },
   {
     id: 'programming',
     name: 'Programming',
     img: 'https://images.nareshit.com/images/image_1706093917022.jpg',
-    emoji: '💻',
-    bg: '#dcfce7',
-    color: '#16a34a',
+    bg: '#7c3aed', color: '#fff',
   },
   {
     id: 'automations',
     name: 'Automations',
     img: 'https://images.nareshit.com/images/image_1706532317771.jpg',
-    emoji: '🤖',
-    bg: '#ffedd5',
-    color: '#ea580c',
+    bg: '#d97706', color: '#fff',
   },
   {
     id: 'data-base',
     name: 'Data Base',
     img: 'https://images.nareshit.com/images/image_1706532292403.jpg',
-    emoji: '🗃️',
-    bg: '#dbeafe',
-    color: '#1565c0',
+    bg: '#1d4ed8', color: '#fff',
   },
   {
     id: 'web-development',
     name: 'Web Development',
     img: 'https://images.nareshit.com/images/image_1706532234414.jpg',
-    emoji: '🌐',
-    bg: '#f3e8ff',
-    color: '#7c3aed',
+    bg: '#db2777', color: '#fff',
   },
   {
     id: 'frameworks',
     name: 'Frameworks',
     img: 'https://images.nareshit.com/images/image_1706687556313.png',
-    emoji: '🧩',
-    bg: '#dbeafe',
-    color: '#0284c7',
+    bg: '#475569', color: '#fff',
   },
 ]
 
-/* ── Page ────────────────────────────────────────────────── */
+/* ── Page ────────────────────────────────────────────────────── */
 export default function InterviewQuestions() {
   return (
     <div className="iq-page">
@@ -170,30 +137,23 @@ export default function InterviewQuestions() {
               to={`/interview-questions/${cat.id}`}
               className="iq-card"
             >
-              <div
-                className="iq-card__img-wrap"
-                style={{ background: cat.bg }}
-              >
-                {cat.img ? (
-                  <img
-                    src={cat.img}
-                    alt={cat.name}
-                    className="iq-card__img"
-                    loading="lazy"
-                    onError={e => {
-                      e.currentTarget.style.display = 'none'
-                      e.currentTarget.nextElementSibling.style.display = 'flex'
-                    }}
-                  />
-                ) : null}
-                <div
-                  className="iq-card__emoji-wrap"
-                  style={{
-                    display: cat.img ? 'none' : 'flex',
-                    color: cat.color,
+              <div className="iq-card__img-wrap">
+                <img
+                  src={cat.img}
+                  alt={cat.name}
+                  className="iq-card__img"
+                  loading="lazy"
+                  onError={e => {
+                    e.currentTarget.style.display = 'none'
+                    e.currentTarget.nextElementSibling.style.display = 'flex'
                   }}
+                />
+                {/* letter fallback shown only when img fails */}
+                <div
+                  className="iq-card__fallback"
+                  style={{ background: cat.bg, color: cat.color }}
                 >
-                  <span className="iq-card__emoji">{cat.emoji}</span>
+                  {cat.name[0]}
                 </div>
               </div>
               <div className="iq-card__name">{cat.name}</div>
