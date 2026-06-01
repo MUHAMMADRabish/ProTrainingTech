@@ -1,0 +1,627 @@
+@import './Home.css';
+
+/* ─── Page wrapper ────────────────────────────────────── */
+.ot-page {
+  overflow-x: hidden;
+  color: var(--txt);
+  background: var(--bg);
+}
+
+/* ═══════════════════════════════════════════════════════
+   HERO
+═══════════════════════════════════════════════════════ */
+.ot-hero {
+  background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 50%, #2a4a7a 75%, #c04e22 100%);
+  padding: 9rem 0 5.5rem;
+  position: relative;
+  text-align: center;
+  overflow: hidden;
+}
+
+.ot-hero__inner {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  position: relative;
+  z-index: 2;
+}
+
+.ot-hero__tag {
+  display: inline-block;
+  background: rgba(255,255,255,.14);
+  border: 1px solid rgba(255,255,255,.25);
+  color: #ffd5b0;
+  font-size: .78rem;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  padding: .35rem 1rem;
+  border-radius: var(--radius-pill);
+  margin-bottom: 1.4rem;
+}
+
+.ot-hero__heading {
+  font-size: clamp(2rem, 4.5vw, 3.1rem);
+  font-weight: 900;
+  color: var(--white);
+  line-height: 1.15;
+  margin-bottom: 1.2rem;
+}
+
+.ot-hero__heading em {
+  font-style: normal;
+  color: #ffb38a;
+}
+
+.ot-hero__sub {
+  font-size: 1.05rem;
+  color: rgba(255,255,255,.8);
+  line-height: 1.8;
+  max-width: 640px;
+  margin: 0 auto 2.25rem;
+}
+
+.ot-hero__btns {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.ot-hero__orb {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.ot-hero__orb--1 {
+  width: 380px;
+  height: 380px;
+  background: radial-gradient(circle, rgba(224,92,42,.22) 0%, transparent 70%);
+  top: -80px;
+  right: -60px;
+}
+
+.ot-hero__orb--2 {
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(255,255,255,.07) 0%, transparent 70%);
+  bottom: 40px;
+  left: 5%;
+}
+
+.ot-hero__wave {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  line-height: 0;
+  z-index: 2;
+}
+.ot-hero__wave svg { display: block; width: 100%; height: 56px; }
+
+/* ═══════════════════════════════════════════════════════
+   MISSION STATEMENT
+═══════════════════════════════════════════════════════ */
+.ot-mission { background: var(--white); }
+
+.ot-mission__inner {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 3.5rem 3.5rem 3rem;
+  background: var(--bg);
+  border-radius: 20px;
+  border-left: 6px solid var(--orange);
+  position: relative;
+  text-align: center;
+  overflow: hidden;
+}
+
+.ot-mission__bg-mark {
+  position: absolute;
+  top: -18px;
+  left: 2rem;
+  font-size: 9rem;
+  color: var(--orange);
+  font-family: Georgia, serif;
+  font-weight: 900;
+  line-height: 1;
+  opacity: .1;
+  pointer-events: none;
+  select: none;
+}
+
+.ot-mission__quote {
+  font-size: clamp(1.1rem, 2vw, 1.35rem);
+  font-weight: 600;
+  font-style: italic;
+  color: var(--navy);
+  line-height: 1.9;
+  margin-bottom: 2.25rem;
+  position: relative;
+  z-index: 1;
+}
+
+.ot-mission__author {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  font-style: normal;
+}
+
+.ot-mission__author-avatar {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%);
+  color: var(--white);
+  font-size: 1.05rem;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  letter-spacing: -.02em;
+  box-shadow: var(--shadow-sm);
+}
+
+.ot-mission__author strong {
+  display: block;
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--txt);
+  text-align: left;
+}
+
+.ot-mission__author span {
+  font-size: .82rem;
+  color: var(--txt-muted);
+  display: block;
+  text-align: left;
+}
+
+/* ═══════════════════════════════════════════════════════
+   CORE VALUES
+═══════════════════════════════════════════════════════ */
+.ot-values { background: var(--bg); }
+
+.ot-values__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.ot-val-card {
+  background: var(--white);
+  border: 1.5px solid var(--border);
+  border-radius: 16px;
+  padding: 2rem 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: .8rem;
+  box-shadow: var(--shadow-sm);
+  transition: transform .22s, box-shadow .22s;
+  position: relative;
+  overflow: hidden;
+}
+
+.ot-val-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--navy) 0%, var(--orange) 100%);
+}
+
+.ot-val-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-md);
+}
+
+.ot-val-card__icon { font-size: 2.2rem; line-height: 1; }
+
+.ot-val-card__title {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--navy);
+}
+
+.ot-val-card__desc {
+  font-size: .88rem;
+  color: var(--txt-muted);
+  line-height: 1.7;
+}
+
+/* ═══════════════════════════════════════════════════════
+   OUR PHILOSOPHY
+═══════════════════════════════════════════════════════ */
+.ot-philosophy { background: var(--white); }
+
+.ot-philosophy__layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: center;
+}
+
+.ot-philosophy__visual {
+  background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 55%, #2a4a7a 100%);
+  border-radius: 20px;
+  padding: 3rem 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.ot-phi__stat { text-align: center; padding-bottom: .5rem; }
+
+.ot-phi__stat-val {
+  display: block;
+  font-size: 3.8rem;
+  font-weight: 900;
+  color: #ffb38a;
+  line-height: 1;
+  letter-spacing: -.02em;
+}
+
+.ot-phi__stat-lbl {
+  display: block;
+  font-size: .9rem;
+  color: rgba(255,255,255,.7);
+  font-weight: 600;
+  letter-spacing: .04em;
+  margin-top: .3rem;
+}
+
+.ot-phi__divider {
+  height: 1px;
+  background: rgba(255,255,255,.15);
+  margin: .4rem 0;
+}
+
+.ot-phi__point {
+  display: flex;
+  align-items: center;
+  gap: .85rem;
+  font-size: .9rem;
+  color: rgba(255,255,255,.85);
+  line-height: 1.5;
+}
+
+.ot-phi__point span:first-child {
+  color: #ffb38a;
+  font-size: .72rem;
+  flex-shrink: 0;
+}
+
+.ot-philosophy__text .sec-tag {
+  display: inline-block;
+  margin-bottom: .75rem;
+}
+
+.ot-philosophy__text h2 {
+  font-size: clamp(1.6rem, 2.8vw, 2.2rem);
+  font-weight: 800;
+  color: var(--txt);
+  line-height: 1.25;
+  margin: .5rem 0 1.5rem;
+}
+
+.ot-philosophy__text h2 mark {
+  background: none;
+  color: var(--orange);
+}
+
+.ot-philosophy__text p {
+  font-size: .97rem;
+  color: #444;
+  line-height: 1.8;
+  margin-bottom: 1rem;
+}
+
+.ot-philosophy__text p em     { color: var(--orange); font-style: normal; font-weight: 600; }
+.ot-philosophy__text p strong { color: var(--navy); font-weight: 700; }
+
+.ot-phi__cta { margin-top: .75rem; display: inline-flex !important; }
+
+/* ═══════════════════════════════════════════════════════
+   TIMELINE
+═══════════════════════════════════════════════════════ */
+.ot-timeline-section { background: var(--bg); }
+
+.ot-timeline {
+  position: relative;
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 1rem 0 2rem;
+}
+
+.ot-timeline__spine {
+  position: absolute;
+  left: 50%; top: 0; bottom: 0;
+  width: 3px;
+  background: linear-gradient(to bottom, var(--orange) 0%, var(--navy) 100%);
+  transform: translateX(-50%);
+  border-radius: 2px;
+}
+
+.ot-tl-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 2.5rem;
+  position: relative;
+}
+
+.ot-tl-item__dot {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 72px; height: 72px;
+  border-radius: 50%;
+  background: var(--navy);
+  border: 4px solid var(--white);
+  box-shadow: 0 0 0 3px var(--orange), var(--shadow-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  flex-shrink: 0;
+}
+
+.ot-tl-item__year {
+  font-size: .75rem;
+  font-weight: 900;
+  color: var(--white);
+  letter-spacing: .04em;
+}
+
+.ot-tl-item__card {
+  width: calc(50% - 52px);
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.4rem 1.5rem;
+  box-shadow: var(--shadow-sm);
+  transition: transform .22s, box-shadow .22s;
+  position: relative;
+}
+
+.ot-tl-item__card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
+
+.ot-tl-item--left  .ot-tl-item__card { margin-right: auto; }
+.ot-tl-item--right .ot-tl-item__card { margin-left: auto; }
+
+.ot-tl-item--left .ot-tl-item__card::after {
+  content: '';
+  position: absolute;
+  top: 26px;
+  right: calc(50% - 48px);
+  border: 8px solid transparent;
+  border-left-color: var(--border);
+}
+
+.ot-tl-item--right .ot-tl-item__card::after {
+  content: '';
+  position: absolute;
+  top: 26px;
+  left: calc(50% - 48px);
+  border: 8px solid transparent;
+  border-right-color: var(--border);
+}
+
+.ot-tl-item__title {
+  font-size: .98rem;
+  font-weight: 800;
+  color: var(--navy);
+  margin-bottom: .5rem;
+}
+
+.ot-tl-item__desc {
+  font-size: .86rem;
+  color: var(--txt-muted);
+  line-height: 1.7;
+}
+
+/* ═══════════════════════════════════════════════════════
+   FOUNDER'S MESSAGE
+═══════════════════════════════════════════════════════ */
+.ot-founder { background: var(--white); }
+
+.ot-founder__card {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 4rem;
+  background: var(--bg);
+  border-radius: 20px;
+  border: 1.5px solid var(--border);
+  padding: 3.5rem;
+  box-shadow: var(--shadow-sm);
+  align-items: start;
+}
+
+.ot-founder__left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: .55rem;
+}
+
+.ot-founder__avatar-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: .5rem;
+}
+
+.ot-founder__avatar {
+  width: 110px; height: 110px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%);
+  color: var(--white);
+  font-size: 2rem;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-lg);
+  letter-spacing: -.02em;
+  position: relative;
+  z-index: 2;
+}
+
+.ot-founder__ring {
+  position: absolute;
+  inset: -10px;
+  border-radius: 50%;
+  border: 3px dashed rgba(224,92,42,.4);
+  animation: ot-spin 20s linear infinite;
+}
+
+@keyframes ot-spin {
+  to { transform: rotate(360deg); }
+}
+
+.ot-founder__name {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--txt);
+}
+
+.ot-founder__role {
+  font-size: .82rem;
+  color: var(--txt-muted);
+}
+
+.ot-founder__exp {
+  font-size: .74rem;
+  color: var(--orange);
+  font-weight: 700;
+  background: rgba(224,92,42,.08);
+  border: 1px solid rgba(224,92,42,.2);
+  padding: .22rem .75rem;
+  border-radius: var(--radius-pill);
+}
+
+.ot-founder__right { position: relative; }
+
+.ot-founder__qmark {
+  position: absolute;
+  top: -1rem; left: -.5rem;
+  font-size: 7rem;
+  color: var(--orange);
+  font-family: Georgia, serif;
+  font-weight: 900;
+  line-height: 1;
+  opacity: .1;
+  pointer-events: none;
+}
+
+.ot-founder__right p {
+  font-size: .97rem;
+  color: #444;
+  line-height: 1.85;
+  margin-bottom: 1.2rem;
+  position: relative;
+  z-index: 1;
+}
+
+.ot-founder__right p em { color: var(--orange); font-style: normal; font-weight: 600; }
+
+.ot-founder__footer {
+  display: block;
+  font-size: .85rem;
+  font-weight: 700;
+  color: var(--navy);
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--border);
+  margin-top: .25rem;
+}
+
+/* ═══════════════════════════════════════════════════════
+   STATS BANNER
+═══════════════════════════════════════════════════════ */
+.ot-stats {
+  background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 50%, #c04e22 100%);
+  padding: 4rem 0;
+}
+
+.ot-stats__inner {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  text-align: center;
+}
+
+.ot-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .4rem;
+}
+
+.ot-stat__icon { font-size: 2rem; }
+
+.ot-stat__val {
+  font-size: 2.6rem;
+  font-weight: 900;
+  color: var(--white);
+  line-height: 1;
+  letter-spacing: -.02em;
+}
+
+.ot-stat__lbl {
+  font-size: .85rem;
+  font-weight: 600;
+  color: rgba(255,255,255,.75);
+  letter-spacing: .04em;
+}
+
+/* ═══════════════════════════════════════════════════════
+   RESPONSIVE
+═══════════════════════════════════════════════════════ */
+@media (max-width: 1024px) {
+  .ot-philosophy__layout { grid-template-columns: 1fr; gap: 3rem; }
+}
+
+@media (max-width: 900px) {
+  .ot-values__grid { grid-template-columns: 1fr 1fr; }
+
+  .ot-founder__card {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    padding: 2.5rem 2rem;
+  }
+
+  /* Collapse timeline to single column */
+  .ot-timeline__spine { left: 28px; }
+
+  .ot-tl-item {
+    flex-direction: column;
+    padding-left: 72px;
+    margin-bottom: 2rem;
+  }
+
+  .ot-tl-item__dot { left: 28px; top: 0; transform: translateX(-50%); }
+
+  .ot-tl-item__card { width: 100%; margin: 0 !important; }
+
+  .ot-tl-item--left .ot-tl-item__card::after,
+  .ot-tl-item--right .ot-tl-item__card::after { display: none; }
+}
+
+@media (max-width: 768px) {
+  .ot-hero { padding: 7.5rem 0 4.5rem; }
+  .ot-mission__inner { padding: 2.5rem 1.75rem; }
+  .ot-founder__card  { padding: 2rem 1.5rem; }
+  .ot-stats__inner   { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 640px) {
+  .ot-values__grid { grid-template-columns: 1fr; }
+  .ot-stats__inner { gap: 1.5rem; }
+}

@@ -1,0 +1,247 @@
+/* ═══════════════════════════════════════════════════════════
+   New Batches Page — nareshit.com table layout
+   ═══════════════════════════════════════════════════════════ */
+
+.nb-page {
+  min-height: 100vh;
+  background: #fff;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  color: #1a1a2e;
+  overflow-x: hidden;
+  padding-top: 64px;
+}
+
+/* ── MAIN CONTAINER ─────────────────────────────────────── */
+.nb-main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem 4rem;
+}
+
+/* ── PAGE HEADING ───────────────────────────────────────── */
+.nb-header {
+  margin-bottom: 1.8rem;
+}
+
+.nb-header__title {
+  font-size: clamp(1.5rem, 2.8vw, 2.1rem);
+  font-weight: 800;
+  color: #1a1a2e;
+  margin: 0 0 0.4rem;
+}
+
+.nb-header__sub {
+  font-size: 0.95rem;
+  color: #64748b;
+  margin: 0;
+}
+
+/* ── TAB BAR ────────────────────────────────────────────── */
+.nb-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0;
+  border-bottom: 2px solid #e2e8f0;
+  margin-bottom: 1.6rem;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.nb-tabs::-webkit-scrollbar { display: none; }
+
+.nb-tab {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #64748b;
+  padding: 0.75rem 1.1rem;
+  border-bottom: 3px solid transparent;
+  margin-bottom: -2px;
+  white-space: nowrap;
+  transition: color 0.18s, border-color 0.18s;
+}
+.nb-tab:hover { color: #1565c0; }
+.nb-tab--active {
+  color: #1565c0;
+  border-bottom-color: #1565c0;
+}
+
+/* ── CONTROLS ROW ───────────────────────────────────────── */
+.nb-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.8rem;
+  flex-wrap: wrap;
+}
+
+.nb-show-label,
+.nb-search-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.87rem;
+  color: #374151;
+}
+
+.nb-show-select {
+  padding: 0.32rem 0.5rem;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  color: #374151;
+  background: #fff;
+  outline: none;
+  cursor: pointer;
+}
+.nb-show-select:focus { border-color: #1565c0; }
+
+.nb-search-input {
+  padding: 0.35rem 0.65rem;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  color: #374151;
+  outline: none;
+  width: 200px;
+  transition: border-color 0.18s;
+}
+.nb-search-input:focus { border-color: #1565c0; }
+
+/* ── TABLE WRAPPER ──────────────────────────────────────── */
+.nb-table-wrap {
+  overflow-x: auto;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+}
+
+/* ── TABLE ──────────────────────────────────────────────── */
+.nb-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.86rem;
+  min-width: 680px;
+}
+
+.nb-th {
+  background: #1565c0;
+  color: #fff;
+  padding: 0.75rem 1rem;
+  text-align: left;
+  font-weight: 700;
+  font-size: 0.84rem;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  border-right: 1px solid rgba(255,255,255,0.15);
+}
+.nb-th:last-child { border-right: none; }
+.nb-th--sno { width: 56px; text-align: center; }
+
+.nb-tr--even { background: #fff; }
+.nb-tr--odd  { background: #f8faff; }
+.nb-tr--even:hover,
+.nb-tr--odd:hover { background: #eef3fb; }
+
+.nb-td {
+  padding: 0.62rem 1rem;
+  border-bottom: 1px solid #e2e8f0;
+  border-right: 1px solid #e2e8f0;
+  color: #374151;
+  vertical-align: middle;
+  line-height: 1.4;
+}
+.nb-td:last-child { border-right: none; }
+.nb-td--sno   { text-align: center; color: #64748b; font-size: 0.82rem; }
+.nb-td--nowrap { white-space: nowrap; }
+.nb-td--empty {
+  text-align: center;
+  color: #64748b;
+  padding: 2rem;
+  font-style: italic;
+}
+
+/* ── JOIN BUTTON ────────────────────────────────────────── */
+.nb-join-btn {
+  background: #1565c0;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 0.3rem 0.75rem;
+  cursor: pointer;
+  transition: background 0.15s;
+  white-space: nowrap;
+}
+.nb-join-btn:hover { background: #0d47a1; }
+
+/* ── FOOTER ROW ─────────────────────────────────────────── */
+.nb-footer-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 0.75rem;
+}
+
+.nb-info-text {
+  font-size: 0.84rem;
+  color: #64748b;
+}
+
+/* ── PAGINATION ─────────────────────────────────────────── */
+.nb-pagination {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.nb-page-btn {
+  background: #fff;
+  color: #374151;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  font-size: 0.83rem;
+  font-weight: 600;
+  padding: 0.35rem 0.75rem;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+  white-space: nowrap;
+}
+.nb-page-btn:hover:not(:disabled) {
+  background: #f0f4f8;
+  border-color: #1565c0;
+  color: #1565c0;
+}
+.nb-page-btn:disabled { opacity: 0.4; cursor: not-allowed; }
+
+.nb-page-btn--num { min-width: 36px; text-align: center; padding: 0.35rem 0.5rem; }
+.nb-page-btn--active {
+  background: #1565c0;
+  color: #fff;
+  border-color: #1565c0;
+}
+.nb-page-btn--active:hover { background: #0d47a1; border-color: #0d47a1; color: #fff; }
+
+.nb-page-ellipsis {
+  font-size: 0.85rem;
+  color: #64748b;
+  padding: 0 0.25rem;
+}
+
+/* ── RESPONSIVE ─────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .nb-main { padding: 2rem 1rem 3rem; }
+  .nb-controls { flex-direction: column; align-items: flex-start; }
+  .nb-search-input { width: 100%; }
+  .nb-footer-row { flex-direction: column; align-items: flex-start; }
+}
+
+@media (max-width: 480px) {
+  .nb-tab { padding: 0.65rem 0.75rem; font-size: 0.82rem; }
+  .nb-page-btn { padding: 0.3rem 0.55rem; font-size: 0.78rem; }
+}

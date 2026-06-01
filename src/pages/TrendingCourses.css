@@ -1,0 +1,33 @@
+@import './CategoryPage.css';
+
+.cat-hero--trending {
+  background: linear-gradient(135deg, #1a0a2e 0%, #3b0764 45%, #1e3a5f 75%, #c04e22 100%);
+}
+
+.trend-rank {
+  display: flex;
+  align-items: baseline;
+  gap: .3rem;
+  margin-bottom: .1rem;
+}
+
+.trend-rank__num {
+  font-size: 1.05rem;
+  font-weight: 900;
+  color: var(--orange);
+  line-height: 1;
+}
+
+.trend-rank__lbl {
+  font-size: .68rem;
+  font-weight: 700;
+  color: var(--txt-muted);
+  text-transform: uppercase;
+  letter-spacing: .07em;
+}
+
+.trending-badge {
+  background: linear-gradient(90deg, #f59e0b, #ef4444) !important;
+  border: none !important;
+  font-size: .65rem !important;
+}

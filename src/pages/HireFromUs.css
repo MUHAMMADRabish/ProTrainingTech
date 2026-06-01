@@ -1,0 +1,213 @@
+@import './Home.css';
+
+.hire-page {
+  overflow-x: hidden;
+  color: var(--txt);
+  background: var(--bg);
+}
+
+/* Hero */
+.hire-hero {
+  background: linear-gradient(135deg, #111827 0%, #1e3a5f 45%, #1a4a4a 75%, #b45309 100%);
+  padding: 8.5rem 0 0;
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+}
+.hire-hero__inner {
+  max-width: 860px; margin: 0 auto; padding: 0 1.5rem 4rem; position: relative; z-index: 2;
+}
+.hire-hero__tag {
+  display: inline-flex; align-items: center; gap: .45rem;
+  background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.22);
+  color: #ffd5b0; font-size: .74rem; font-weight: 700;
+  letter-spacing: .1em; text-transform: uppercase;
+  padding: .35rem 1rem; border-radius: var(--radius-pill); margin-bottom: 1.3rem;
+}
+.hire-hero h1 {
+  font-size: clamp(2.1rem, 4.5vw, 3.1rem);
+  font-weight: 900; color: var(--white); line-height: 1.14; margin-bottom: 1.1rem;
+}
+.hire-hero h1 em { font-style: normal; color: #ffb38a; }
+.hire-hero__sub {
+  font-size: 1.05rem; color: rgba(255,255,255,.8);
+  line-height: 1.78; max-width: 660px; margin: 0 auto 2.4rem;
+}
+.hire-hero__btns { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; margin-bottom: 3.2rem; }
+
+.hire-hero__stats {
+  display: flex; justify-content: center; gap: 0;
+  border-top: 1px solid rgba(255,255,255,.15); padding-top: 2rem; flex-wrap: wrap;
+}
+.hire-hero__stat {
+  flex: 1; min-width: 120px; padding: 0 1.5rem;
+  border-right: 1px solid rgba(255,255,255,.12);
+  display: flex; flex-direction: column; align-items: center;
+}
+.hire-hero__stat:last-child { border-right: none; }
+.hire-hero__stat-val { font-size: 1.65rem; font-weight: 900; color: var(--white); line-height: 1; }
+.hire-hero__stat-lbl { font-size: .72rem; color: rgba(255,255,255,.62); margin-top: .3rem; text-transform: uppercase; letter-spacing: .07em; }
+.hire-hero__wave { line-height: 0; position: relative; z-index: 1; }
+
+/* Section */
+.hire-section { padding: 5rem 0; }
+.hire-section--alt { background: var(--white); }
+.hire-sec-head { text-align: center; max-width: 680px; margin: 0 auto 3rem; }
+.hire-sec-head h2 { font-size: clamp(1.65rem, 2.8vw, 2.2rem); font-weight: 800; color: var(--txt); margin-bottom: .6rem; }
+.hire-sec-head h2 mark { background: none; color: var(--orange); }
+.hire-sec-head p { font-size: .97rem; color: var(--txt-muted); line-height: 1.7; }
+
+/* Benefits grid */
+.hire-benefits__grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;
+}
+.hire-benefit-card {
+  background: var(--white); border: 1px solid var(--border);
+  border-radius: 14px; padding: 1.8rem 1.6rem;
+  display: flex; flex-direction: column; gap: .75rem;
+  transition: transform .22s, box-shadow .22s;
+}
+.hire-benefit-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+.hire-benefit-card__icon {
+  width: 50px; height: 50px; border-radius: 12px;
+  display: flex; align-items: center; justify-content: center; font-size: 1.5rem;
+}
+.hire-benefit-card__title { font-size: 1rem; font-weight: 700; color: var(--txt); }
+.hire-benefit-card__desc { font-size: .87rem; color: var(--txt-muted); line-height: 1.65; }
+
+/* Hiring process */
+.hire-steps__track {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 0; position: relative;
+}
+.hire-steps__track::before {
+  content: ''; position: absolute; top: 36px;
+  left: calc(12.5% + 18px); right: calc(12.5% + 18px);
+  height: 2px;
+  background: linear-gradient(90deg, var(--navy) 0%, var(--orange) 100%);
+  opacity: .25; z-index: 0;
+}
+.hire-step {
+  display: flex; flex-direction: column; align-items: center;
+  text-align: center; padding: 0 1rem; position: relative; z-index: 1;
+}
+.hire-step__num {
+  width: 72px; height: 72px; border-radius: 50%;
+  background: var(--white); border: 2.5px solid var(--border);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.5rem; margin-bottom: 1.1rem; position: relative;
+  flex-shrink: 0; transition: border-color .2s, box-shadow .2s;
+}
+.hire-step__num::after {
+  content: attr(data-n); position: absolute;
+  top: -8px; right: -8px; width: 22px; height: 22px;
+  background: var(--orange); color: var(--white);
+  border-radius: 50%; font-size: .68rem; font-weight: 800;
+  display: flex; align-items: center; justify-content: center;
+}
+.hire-step:hover .hire-step__num { border-color: var(--orange); box-shadow: 0 0 0 6px rgba(224,92,42,.1); }
+.hire-step__title { font-size: .95rem; font-weight: 700; color: var(--txt); margin-bottom: .4rem; }
+.hire-step__desc  { font-size: .83rem; color: var(--txt-muted); line-height: 1.6; }
+
+/* Skills section */
+.hire-skills__wrap {
+  max-width: 860px; margin: 0 auto;
+}
+.hire-skills__group { margin-bottom: 2rem; }
+.hire-skills__group-label {
+  font-size: .8rem; font-weight: 700; color: var(--txt-muted);
+  text-transform: uppercase; letter-spacing: .08em; margin-bottom: .85rem;
+  display: flex; align-items: center; gap: .5rem;
+}
+.hire-skills__group-label::after {
+  content: ''; flex: 1; height: 1px; background: var(--border);
+}
+.hire-skills__chips { display: flex; flex-wrap: wrap; gap: .55rem; }
+.hire-skill-chip {
+  padding: .38rem .9rem;
+  background: var(--white); border: 1.5px solid var(--border);
+  border-radius: var(--radius-pill); font-size: .83rem;
+  font-weight: 600; color: var(--txt); transition: all .18s;
+}
+.hire-skill-chip:hover { border-color: var(--navy); color: var(--navy); background: rgba(30,58,95,.05); }
+
+/* Enquiry form */
+.hire-enquiry {
+  background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 60%, #2a4a7a 100%);
+  padding: 5rem 0;
+}
+.hire-enquiry__grid {
+  max-width: 1100px; margin: 0 auto; padding: 0 1.5rem;
+  display: grid; grid-template-columns: 1fr 1.1fr; gap: 4rem; align-items: start;
+}
+.hire-enquiry__info { color: var(--white); padding-top: .5rem; }
+.hire-enquiry__pretag {
+  display: inline-block;
+  background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.2);
+  color: #ffd5b0; font-size: .72rem; font-weight: 700;
+  letter-spacing: .1em; text-transform: uppercase;
+  padding: .3rem .9rem; border-radius: var(--radius-pill); margin-bottom: 1.2rem;
+}
+.hire-enquiry__info h2 {
+  font-size: clamp(1.7rem, 2.8vw, 2.1rem); font-weight: 900;
+  line-height: 1.2; margin-bottom: 1rem; color: var(--white);
+}
+.hire-enquiry__info p { font-size: .97rem; color: rgba(255,255,255,.75); line-height: 1.75; margin-bottom: 2rem; }
+.hire-enquiry__perks { list-style: none; display: flex; flex-direction: column; gap: .7rem; margin-bottom: 2.2rem; }
+.hire-enquiry__perks li {
+  display: flex; align-items: center; gap: .7rem;
+  font-size: .9rem; color: rgba(255,255,255,.85);
+}
+.hire-enquiry__perks li::before {
+  content: '✓'; width: 22px; height: 22px;
+  background: rgba(255,255,255,.15); border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: .72rem; font-weight: 800; color: #4ade80; flex-shrink: 0;
+}
+.hire-enquiry__form-card {
+  background: var(--white); border-radius: 18px; padding: 2.4rem 2.2rem;
+  box-shadow: 0 20px 60px rgba(0,0,0,.25);
+}
+.hire-enquiry__form-title { font-size: 1.2rem; font-weight: 800; color: var(--txt); margin-bottom: .3rem; }
+.hire-enquiry__form-sub   { font-size: .83rem; color: var(--txt-muted); margin-bottom: 1.5rem; }
+
+.hire-field { margin-bottom: 1rem; }
+.hire-field input, .hire-field select, .hire-field textarea {
+  width: 100%; padding: .72rem 1rem;
+  border: 1.5px solid var(--border); border-radius: var(--radius-sm);
+  font-size: .9rem; font-family: inherit; color: var(--txt);
+  background: var(--bg); transition: border-color .18s, box-shadow .18s; outline: none;
+}
+.hire-field input:focus, .hire-field select:focus, .hire-field textarea:focus {
+  border-color: var(--navy); box-shadow: 0 0 0 3px rgba(30,58,95,.1); background: var(--white);
+}
+.hire-field textarea { resize: vertical; min-height: 90px; }
+.hire-form__row { display: grid; grid-template-columns: 1fr 1fr; gap: .75rem; }
+.hire-submit-btn {
+  width: 100%; padding: .85rem;
+  background: var(--orange); color: var(--white);
+  border: none; border-radius: var(--radius-sm);
+  font-size: .95rem; font-weight: 700; cursor: pointer;
+  font-family: inherit; transition: background .18s, transform .15s; margin-top: .25rem;
+}
+.hire-submit-btn:hover { background: var(--orange-lt); transform: translateY(-1px); }
+.hire-form__success { text-align: center; padding: 2rem 0; }
+.hire-form__success-check {
+  width: 64px; height: 64px; background: #dcfce7; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.8rem; margin: 0 auto 1rem; color: #16a34a;
+}
+.hire-form__success h3 { font-size: 1.2rem; font-weight: 800; color: var(--txt); margin-bottom: .5rem; }
+.hire-form__success p  { font-size: .9rem; color: var(--txt-muted); }
+
+/* Responsive */
+@media (max-width: 1024px) { .hire-benefits__grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 900px)  { .hire-enquiry__grid  { grid-template-columns: 1fr; gap: 2.5rem; } }
+@media (max-width: 700px) {
+  .hire-steps__track { grid-template-columns: 1fr 1fr; gap: 2rem; }
+  .hire-steps__track::before { display: none; }
+}
+@media (max-width: 580px) {
+  .hire-benefits__grid { grid-template-columns: 1fr; }
+  .hire-form__row      { grid-template-columns: 1fr; }
+}
