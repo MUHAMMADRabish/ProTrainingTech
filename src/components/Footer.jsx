@@ -139,8 +139,9 @@ export default function Footer() {
         <div className="ft__brand">
           <div className="ft__logo">
             <img
-              src="https://protrainingtech.com/wp-content/uploads/2022/12/cropped-Pro-Training-Techs-Logo-2.png"
+              src="/PT-logo.png"
               alt="Pro Training Tech"
+              style={{ height: '45px', objectFit: 'contain' }}
             />
           </div>
           <p className="ft__tagline">One Stop Career Solution</p>

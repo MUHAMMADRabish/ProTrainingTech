@@ -77,7 +77,7 @@ export default function Login() {
 
         {/* Logo */}
         <div className="login-logo">
-          <img src="https://protrainingtech.com/wp-content/uploads/2022/12/cropped-Pro-Training-Techs-Logo-2.png" alt="Pro Training Tech" style={{ height: '50px', objectFit: 'contain' }} />
+          <img src="/PT-logo.png" alt="Pro Training Tech" style={{ height: '50px', objectFit: 'contain' }} />
           <div className="login-logo__tag">One Stop Career Solution</div>
         </div>
 

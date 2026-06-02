@@ -84,8 +84,45 @@ export default function Navbar() {
     <nav className={`navbar${scrolled ? ' navbar--scrolled' : ''}`}>
       <div className="navbar__inner">
 
-        <Link to="/" className="navbar__logo" onClick={closeAll}>
-          <img src="https://protrainingtech.com/wp-content/uploads/2022/12/cropped-Pro-Training-Techs-Logo-2.png" alt="Pro Training Tech" style={{ height: '42px', objectFit: 'contain' }} />
+        <Link to="/" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '12px' }} onClick={closeAll}>
+          <div style={{
+            width: '44px',
+            height: '44px',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            flexShrink: 0
+          }}>
+            <img
+              src="/PT-logo.png"
+              alt="Pro Training Tech"
+              style={{
+                width: '44px',
+                height: '44px',
+                objectFit: 'contain'
+              }}
+            />
+          </div>
+          <div>
+            <div style={{
+              fontSize: '17px',
+              fontWeight: '700',
+              color: '#ffffff',
+              letterSpacing: '-0.3px'
+            }}>
+              Pro Training{' '}
+              <span style={{ color: '#f59e0b' }}>Tech</span>
+            </div>
+            <div style={{
+              fontSize: '11px',
+              color: '#94a3b8',
+              letterSpacing: '1.5px',
+              textTransform: 'uppercase',
+              marginTop: '1px'
+            }}>
+              One Stop Career Solution
+            </div>
+          </div>
         </Link>
 
         <form className="navbar__search" onSubmit={handleSearch} role="search">

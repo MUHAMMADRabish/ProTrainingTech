@@ -608,7 +608,7 @@ export default function CourseDetail() {
 
             <div className="cd-modal__header">
               <div className="cd-modal__logo">
-                <img src="https://protrainingtech.com/wp-content/uploads/2022/12/cropped-Pro-Training-Techs-Logo-2.png" alt="Pro Training Tech" style={{ height: '32px', objectFit: 'contain' }} />
+                <img src="/PT-logo.png" alt="Pro Training Tech" style={{ height: '32px', objectFit: 'contain' }} />
               </div>
               <h3>Enroll Now</h3>
               <p>{course.title}</p>

@@ -60,7 +60,6 @@
 .ft__logo img {
   height: 45px;
   object-fit: contain;
-  filter: brightness(0) invert(1);   /* white logo on dark bg */
   display: block;
 }
 

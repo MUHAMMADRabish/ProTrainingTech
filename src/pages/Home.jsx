@@ -553,7 +553,7 @@ export default function Home() {
 
           {/* Col 1 — Brand */}
           <div className="sf__col sf__col--brand">
-            <img src="https://protrainingtech.com/wp-content/uploads/2022/12/cropped-Pro-Training-Techs-Logo-2.png" alt="Pro Training Tech" className="sf__logo" />
+            <img src="/PT-logo.png" alt="Pro Training Tech" className="sf__logo" />
             <p className="sf__bio">Pro Training Tech is a premier IT training institute offering industry-aligned courses with guaranteed placement assistance and expert trainers.</p>
             <div className="sf__socials">
               <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="sf__social" aria-label="Facebook">

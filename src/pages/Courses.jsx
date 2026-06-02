@@ -537,7 +537,7 @@ export default function Courses() {
         <div className="footer__inner">
           <div className="footer__brand">
             <div className="footer__logo">
-              <img src="https://protrainingtech.com/wp-content/uploads/2022/12/cropped-Pro-Training-Techs-Logo-2.png" alt="Pro Training Tech" style={{ height: '40px', objectFit: 'contain' }} />
+              <img src="/PT-logo.png" alt="Pro Training Tech" style={{ height: '40px', objectFit: 'contain' }} />
             </div>
             <p className="footer__tagline">
               One Stop Career Solution
