@@ -328,7 +328,7 @@ export default function FullStackDSProgramDetail() {
                     <option>Classroom Training</option>
                   </select>
                 </div>
-                <div className="fsj-select-group">
+                <div className="fsj-select-group" style={{ display: 'none' }}>
                   <label className="fsj-select-label">Faculty</label>
                   <select className="fsj-select" value={faculty} onChange={e => setFaculty(e.target.value)}>
                     <option>Real-Time Expert</option>
@@ -345,13 +345,13 @@ export default function FullStackDSProgramDetail() {
                   <span className="fsj-info-pill__icon">🕐</span>
                   <span>Dur: <strong>6 Months</strong></span>
                 </div>
-                <div className="fsj-info-pill fsj-info-pill--fee">
+                <div className="fsj-info-pill fsj-info-pill--fee" style={{ display: 'none' }}>
                   <span className="fsj-info-pill__icon">₹</span>
                   <span>Fee: <strong>35000 /-</strong></span>
                 </div>
               </div>
               <div className="fsj-controls__right">
-                <a href="/curriculum/full-stack-data-science-certification-curriculum.pdf" className="fsj-btn fsj-btn--outline" onClick={e => e.preventDefault()}>
+                <a style={{ display: 'none' }} href="/curriculum/full-stack-data-science-certification-curriculum.pdf" className="fsj-btn fsj-btn--outline" onClick={e => e.preventDefault()}>
                   ↓ Download Curriculum
                 </a>
                 <button className="fsj-btn fsj-btn--primary" onClick={() => scrollToTab('upcoming-batches')}>

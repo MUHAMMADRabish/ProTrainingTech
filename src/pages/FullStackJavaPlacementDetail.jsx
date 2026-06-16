@@ -181,7 +181,7 @@ export default function FullStackJavaPlacementDetail() {
                     <option>Classroom Training</option>
                   </select>
                 </div>
-                <div className="fsj-select-group">
+                <div className="fsj-select-group" style={{ display: 'none' }}>
                   <label className="fsj-select-label">Faculty</label>
                   <select className="fsj-select"><option>Real-Time Expert</option></select>
                 </div>
@@ -190,10 +190,10 @@ export default function FullStackJavaPlacementDetail() {
                   <select className="fsj-select"><option>8 Jun - 11:00 AM IST</option></select>
                 </div>
                 <div className="fsj-info-pill"><span className="fsj-info-pill__icon">🕐</span><span>Dur: <strong>6 months</strong></span></div>
-                <div className="fsj-info-pill fsj-info-pill--fee"><span className="fsj-info-pill__icon">₹</span><span>Fee: <strong>35,000 /-</strong></span></div>
+                <div className="fsj-info-pill fsj-info-pill--fee" style={{ display: 'none' }}><span className="fsj-info-pill__icon">₹</span><span>Fee: <strong>35,000 /-</strong></span></div>
               </div>
               <div className="fsj-controls__right">
-                <a href="#curriculum" className="fsj-btn fsj-btn--outline" onClick={e => { e.preventDefault(); scrollToTab('curriculum') }}>↓ Download Curriculum</a>
+                <a style={{ display: 'none' }} href="#curriculum" className="fsj-btn fsj-btn--outline" onClick={e => { e.preventDefault(); scrollToTab('curriculum') }}>↓ Download Curriculum</a>
                 <button className="fsj-btn fsj-btn--primary" onClick={() => scrollToTab('upcoming-batches')}>Enroll Course</button>
               </div>
             </div>

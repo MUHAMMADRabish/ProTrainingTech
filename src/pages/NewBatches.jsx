@@ -1,7 +1,35 @@
 import { useState, useMemo } from 'react'
+import { Link } from 'react-router-dom'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import './NewBatches.css'
+
+const COURSE_SLUGS = {
+  "Full Stack Java": "full-stack-java-online-training",
+  "Full Stack Python": "full-stack-python-online-training",
+  "Full Stack Software Testing": "full-stack-software-testing-online-training",
+  "Full Stack Data Science & AI": "full-stack-data-science-ai-online-training",
+  "Full Stack .NET Core": "full-stack-dot-net-core-online-training",
+  "UI Full Stack Web with React": "ui-full-stack-web-development-with-react-online-training",
+  "Data Science with AI": "data-science-online-training",
+  "Data Analytics & Business Analytics": "data-analytics-online-training",
+  "MLOps & AIOps": "mlops-and-aiops-online-training",
+  "Generative AI & Agentic AI with Python": "generative-ai-online-training",
+  "Advanced Generative & Agentic AI": "advanced-generative-and-agentic-ai",
+  "Chat GPT": "chat-gpt-online-training",
+  "Numpy | Pandas | Matplotlib": "numpy-pandas-matplotlib-online-training",
+  "Full Stack Data Science Program": "full-stack-data-science-ai-certification-online-training",
+  "Playwright with TypeScript": "playwright-with-typescript",
+  "Full Stack Java Placement Assistance": "full-stack-java-placement-assistance-program-online-training",
+  "Full Stack .Net Placement Assistance": "full-stack-dot-net-placement-assistance-program-online-training",
+  "Terraform Associate Certification (003)": "terraform-associate-certification-training-003",
+  "Data Science Internship Program": "internship-program-on-data-science",
+  "Python Internship Program": "internship-program-on-python",
+  "DevOps with Cloud Internship": "internship-program-on-devops-with-cloud",
+  "Workshop on Modern Data Lake Analytics": "data-science-online-training",
+  "Workshop on Advanced LLMOPS": "mlops-and-aiops-online-training",
+  "Workshop on Production Agentic AI": "advanced-generative-and-agentic-ai",
+}
 
 /* ── Batch data per tab ─────────────────────────────────── */
 const BATCH_DATA = {
@@ -217,6 +245,7 @@ export default function NewBatches() {
                 <th className="nb-th">Date</th>
                 <th className="nb-th">Time</th>
                 <th className="nb-th" style={{ display: 'none' }}>Meeting Link</th>
+                <th style={{ background: '#1565c0', color: '#fff', padding: '12px 16px' }}>Course Details</th>
               </tr>
             </thead>
             <tbody>
@@ -231,11 +260,30 @@ export default function NewBatches() {
                     <td className="nb-td" style={{ display: 'none' }}>
                       <button className="nb-join-btn" type="button">Click here</button>
                     </td>
+                    <td className="nb-td">
+                      {COURSE_SLUGS[row.course] && (
+                        <Link
+                          to={`/courses/${COURSE_SLUGS[row.course]}`}
+                          style={{
+                            background: '#1565c0',
+                            color: '#fff',
+                            padding: '6px 14px',
+                            borderRadius: '4px',
+                            textDecoration: 'none',
+                            fontSize: '13px',
+                            fontWeight: '600',
+                            whiteSpace: 'nowrap',
+                          }}
+                        >
+                          View Details
+                        </Link>
+                      )}
+                    </td>
                   </tr>
                 ))
               ) : (
                 <tr>
-                  <td colSpan={4} className="nb-td nb-td--empty">
+                  <td colSpan={5} className="nb-td nb-td--empty">
                     {search ? 'No matching batches found.' : 'No batches available.'}
                   </td>
                 </tr>

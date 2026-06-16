@@ -330,7 +330,7 @@ export default function AdvancedGenAIDetail() {
                     <option>Online Training</option>
                   </select>
                 </div>
-                <div className="fsj-select-group">
+                <div className="fsj-select-group" style={{ display: 'none' }}>
                   <label className="fsj-select-label">Faculty</label>
                   <select className="fsj-select" value={faculty} onChange={e => setFaculty(e.target.value)}>
                     <option>Real-Time Expert</option>
@@ -347,13 +347,14 @@ export default function AdvancedGenAIDetail() {
                   <span className="fsj-info-pill__icon">🕐</span>
                   <span>Dur: <strong>4 Months</strong></span>
                 </div>
-                <div className="fsj-info-pill fsj-info-pill--fee">
+                <div className="fsj-info-pill fsj-info-pill--fee" style={{ display: 'none' }}>
                   <span className="fsj-info-pill__icon">₹</span>
                   <span>Fee: <strong>25000 /-</strong></span>
                 </div>
               </div>
               <div className="fsj-controls__right">
                 <a
+                  style={{ display: 'none' }}
                   href="/curriculum/advanced-generative-agentic-ai-curriculum.pdf"
                   className="fsj-btn fsj-btn--outline"
                   onClick={e => e.preventDefault()}

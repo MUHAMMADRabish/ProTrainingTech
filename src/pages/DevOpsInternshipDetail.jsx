@@ -157,14 +157,14 @@ export default function DevOpsInternshipDetail() {
           <div className="fsj-controls__left">
             <div className="fsj-select-group"><label className="fsj-select-label">Training Mode</label>
               <select className="fsj-select" value={trainingType} onChange={e => setTrainingType(e.target.value)}><option>Online</option><option>Offline</option><option>Live</option></select></div>
-            <div className="fsj-select-group"><label className="fsj-select-label">Faculty</label>
+            <div className="fsj-select-group" style={{ display: 'none' }}><label className="fsj-select-label">Faculty</label>
               <select className="fsj-select"><option>Real-Time Expert</option></select></div>
             <div className="fsj-select-group"><label className="fsj-select-label">Duration</label>
               <select className="fsj-select"><option>45 Days</option></select></div>
             <div className="fsj-info-pill"><span className="fsj-info-pill__icon">🕐</span><span>Dur: <strong>45 days</strong></span></div>
           </div>
           <div className="fsj-controls__right">
-            <a href="#curriculum" className="fsj-btn fsj-btn--outline" onClick={e => { e.preventDefault(); scrollToTab('curriculum') }}>↓ Download Curriculum</a>
+            <a style={{ display: 'none' }} href="#curriculum" className="fsj-btn fsj-btn--outline" onClick={e => { e.preventDefault(); scrollToTab('curriculum') }}>↓ Download Curriculum</a>
             <button className="fsj-btn fsj-btn--primary" onClick={() => scrollToTab('upcoming-batches')}>Apply Now</button>
           </div>
         </div></div></div>

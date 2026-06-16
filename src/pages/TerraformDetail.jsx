@@ -147,15 +147,15 @@ export default function TerraformDetail() {
           <div className="fsj-controls__left">
             <div className="fsj-select-group"><label className="fsj-select-label">Training Type</label>
               <select className="fsj-select" value={trainingType} onChange={e => setTrainingType(e.target.value)}><option>Online Training</option><option>Classroom Training (KPHB)</option></select></div>
-            <div className="fsj-select-group"><label className="fsj-select-label">Faculty</label>
+            <div className="fsj-select-group" style={{ display: 'none' }}><label className="fsj-select-label">Faculty</label>
               <select className="fsj-select"><option>Mr. Raham</option></select></div>
             <div className="fsj-select-group"><label className="fsj-select-label">Batch Date</label>
               <select className="fsj-select"><option>1 Jun - 9:00 AM IST</option></select></div>
             <div className="fsj-info-pill"><span className="fsj-info-pill__icon">🕐</span><span>Dur: <strong>21 days</strong></span></div>
-            <div className="fsj-info-pill fsj-info-pill--fee"><span className="fsj-info-pill__icon">₹</span><span>Fee: <strong>5,000 /-</strong></span></div>
+            <div className="fsj-info-pill fsj-info-pill--fee" style={{ display: 'none' }}><span className="fsj-info-pill__icon">₹</span><span>Fee: <strong>5,000 /-</strong></span></div>
           </div>
           <div className="fsj-controls__right">
-            <a href="#curriculum" className="fsj-btn fsj-btn--outline" onClick={e => { e.preventDefault(); scrollToTab('curriculum') }}>↓ Download Curriculum</a>
+            <a style={{ display: 'none' }} href="#curriculum" className="fsj-btn fsj-btn--outline" onClick={e => { e.preventDefault(); scrollToTab('curriculum') }}>↓ Download Curriculum</a>
             <button className="fsj-btn fsj-btn--primary" onClick={() => scrollToTab('upcoming-batches')}>Enroll Course</button>
           </div>
         </div></div></div>
