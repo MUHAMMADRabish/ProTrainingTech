@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
+import ShareModal from '../components/ShareModal'
 import './FullStackCourses.css'
 
 /* ── DATA ─────────────────────────────────────────────────── */
@@ -169,7 +170,8 @@ export default function FullStackCourses() {
   const [formData, setFormData]       = useState({
     name: '', email: '', mobile: '', course: '', mode: '', terms: false,
   })
-  const [submitted, setSubmitted] = useState(false)
+  const [submitted,  setSubmitted]  = useState(false)
+  const [shareModal, setShareModal] = useState(null)
 
   function handleChange(e) {
     const { name, value, type, checked } = e.target
@@ -280,11 +282,9 @@ export default function FullStackCourses() {
                                 className="fsc-card__share"
                                 type="button"
                                 onClick={e => {
+                                  e.preventDefault()
                                   e.stopPropagation()
-                                  const url = `${window.location.origin}/courses/${c.slug}`
-                                  navigator.share
-                                    ? navigator.share({ title: c.title, url })
-                                    : navigator.clipboard?.writeText(url)
+                                  setShareModal({ title: c.title, slug: c.slug })
                                 }}
                               >
                                 SHARE
@@ -507,6 +507,13 @@ export default function FullStackCourses() {
       </div>
 
       <Footer />
+
+      {shareModal && (
+        <ShareModal
+          course={shareModal}
+          onClose={() => setShareModal(null)}
+        />
+      )}
     </div>
   )
 }

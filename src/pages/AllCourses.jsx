@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
+import ShareModal from '../components/ShareModal'
 import { COURSES, CATEGORY_COLORS } from '../data/courses'
 import './AllCourses.css'
 
@@ -23,9 +24,10 @@ function Stars({ rating }) {
 }
 
 export default function AllCourses() {
-  const [active,    setActive]    = useState('All Courses')
-  const [page,      setPage]      = useState(0)
-  const [saved,     setSaved]     = useState({})
+  const [active,     setActive]     = useState('All Courses')
+  const [page,       setPage]       = useState(0)
+  const [saved,      setSaved]      = useState({})
+  const [shareModal, setShareModal] = useState(null)
 
   const filtered = active === 'All Courses'
     ? VISIBLE_COURSES
@@ -133,11 +135,9 @@ export default function AllCourses() {
                         <button
                           className="ac-card__share"
                           onClick={e => {
+                            e.preventDefault()
                             e.stopPropagation()
-                            navigator.share?.({
-                              title: course.title,
-                              url: `${window.location.origin}/courses/${course.slug}`,
-                            }).catch(() => {})
+                            setShareModal({ title: course.title, slug: course.slug })
                           }}
                         >
                           SHARE
@@ -185,6 +185,13 @@ export default function AllCourses() {
       </div>
 
       <Footer />
+
+      {shareModal && (
+        <ShareModal
+          course={shareModal}
+          onClose={() => setShareModal(null)}
+        />
+      )}
     </div>
   )
 }

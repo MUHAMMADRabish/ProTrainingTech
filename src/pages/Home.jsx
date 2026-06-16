@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import Navbar from '../components/Navbar'
+import ShareModal from '../components/ShareModal'
 import './Home.css'
 
 /* ── DATA ─────────────────────────────────────────── */
@@ -172,6 +173,7 @@ export default function Home() {
   const [activeTab,  setActiveTab]  = useState('Trending')
   const [submitted,  setSubmitted]  = useState(false)
   const [form, setForm] = useState({ name: '', email: '', phone: '', course: '', mode: 'online', message: '' })
+  const [shareModal, setShareModal] = useState(null)
   const blogRef      = useRef(null)
   const courseCarRef = useRef(null)
 
@@ -264,7 +266,7 @@ export default function Home() {
                 </div>
                 <div className="ccard__btns">
                   <span className="ccard__btn ccard__btn--enroll">ENROLL</span>
-                  <button className="ccard__btn ccard__btn--share" onClick={e => { e.stopPropagation(); handleShare(c.title) }}>SHARE</button>
+                  <button className="ccard__btn ccard__btn--share" onClick={e => { e.preventDefault(); e.stopPropagation(); setShareModal({ title: c.title, slug: c.slug }) }}>SHARE</button>
                 </div>
               </div>
             </Link>
@@ -299,7 +301,7 @@ export default function Home() {
                   </div>
                   <div className="ccard__btns">
                     <span className="ccard__btn ccard__btn--enroll">ENROLL</span>
-                    <button className="ccard__btn ccard__btn--share" onClick={e => { e.stopPropagation(); handleShare(c.title) }}>SHARE</button>
+                    <button className="ccard__btn ccard__btn--share" onClick={e => { e.preventDefault(); e.stopPropagation(); setShareModal({ title: c.title, slug: c.slug }) }}>SHARE</button>
                   </div>
                 </div>
               </Link>
@@ -658,6 +660,12 @@ export default function Home() {
         </div>
       </footer>
 
+      {shareModal && (
+        <ShareModal
+          course={shareModal}
+          onClose={() => setShareModal(null)}
+        />
+      )}
     </div>
   )
 }
