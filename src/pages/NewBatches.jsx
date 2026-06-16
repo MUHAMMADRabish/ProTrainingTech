@@ -37,12 +37,6 @@ const BATCH_DATA = {
     { course: 'Full Stack Java Placement',     faculty: 'Real-Time Expert', date: '08 Jun 2026', time: '11:00 AM IST' },
     { course: 'Full Stack .Net Placement',     faculty: 'Real-Time Expert', date: '08 Jun 2026', time: '11:00 AM IST' },
   ],
-  'KPHB': [
-    { course: 'Terraform Associate (003)',     faculty: 'Mr. Raham',    date: '01 Jun 2026', time: '9:00 AM IST' },
-    { course: 'Full Stack Java',              faculty: 'Mr. Mahendra', date: '21 May 2026', time: '9:00 AM IST' },
-    { course: 'Full Stack Python',            faculty: 'Mr. Shareef',  date: '27 May 2026', time: '6:00 PM IST' },
-    { course: 'MS Azure + Azure DevOps',      faculty: 'Mr. Sandeep',  date: '01 Jun 2026', time: '10:20 AM IST'},
-  ],
   'Workshops': [
     { course: 'Workshop on Modern Data Lake Analytics with Athena',                             faculty: 'Mr. Veera Babu',        date: '29 May 2026', time: '10:00 AM IST' },
     { course: 'Workshop on Advanced LLMOPS',                                                    faculty: 'Mr. Prakash Senapathi', date: '29 May 2026', time: '10:00 AM IST' },
@@ -60,7 +54,6 @@ const BATCH_DATA = {
     { course: 'Data Analytics & Business Analytics', faculty: 'Mr. Nikhil', date: '08 Jun 2026', time: '10:00 AM IST' },
     { course: 'MS Azure + Azure DevOps',       faculty: 'Mr. Sandeep',    date: '07 Jun 2026', time: '11:00 AM IST' },
   ],
-  'JNTU-H': [],
 }
 
 const TABS         = Object.keys(BATCH_DATA)
@@ -187,10 +180,10 @@ export default function NewBatches() {
               <tr>
                 <th className="nb-th nb-th--sno">S.No</th>
                 <th className="nb-th">Course Name</th>
-                <th className="nb-th">Faculty</th>
+                <th className="nb-th" style={{ display: 'none' }}>Faculty</th>
                 <th className="nb-th">Date</th>
                 <th className="nb-th">Time</th>
-                <th className="nb-th">Meeting Link</th>
+                <th className="nb-th" style={{ display: 'none' }}>Meeting Link</th>
               </tr>
             </thead>
             <tbody>
@@ -199,17 +192,17 @@ export default function NewBatches() {
                   <tr key={idx} className={idx % 2 === 0 ? 'nb-tr--even' : 'nb-tr--odd'}>
                     <td className="nb-td nb-td--sno">{startEntry + idx}</td>
                     <td className="nb-td">{row.course}</td>
-                    <td className="nb-td">{row.faculty}</td>
+                    <td className="nb-td" style={{ display: 'none' }}>{row.faculty}</td>
                     <td className="nb-td nb-td--nowrap">{row.date}</td>
                     <td className="nb-td nb-td--nowrap">{row.time}</td>
-                    <td className="nb-td">
+                    <td className="nb-td" style={{ display: 'none' }}>
                       <button className="nb-join-btn" type="button">Click here</button>
                     </td>
                   </tr>
                 ))
               ) : (
                 <tr>
-                  <td colSpan={6} className="nb-td nb-td--empty">
+                  <td colSpan={4} className="nb-td nb-td--empty">
                     {search ? 'No matching batches found.' : 'No batches available.'}
                   </td>
                 </tr>
